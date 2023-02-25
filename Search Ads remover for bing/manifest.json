@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Search Ads remover for bing",
+    "version": "1.0",
+    "description": "Remove Search Ads of bing.",
+    "icons": {
+        "48": "icon.png"
+    },
+    "permissions": ["tabs", "scripting"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "content_scripts":[
+        {
+          "matches":[
+            "https://www.bing.com/*"
+          ],
+          "js":[
+            "content_scripts.js"
+          ]
+        }
+    ]
+}
