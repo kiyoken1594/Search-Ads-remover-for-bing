@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Search Ads remover for bing",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Remove Search Ads of bing.",
     "icons": {
         "48": "icon.png"
@@ -20,7 +20,8 @@
           ],
           "js":[
             "content_scripts.js"
-          ]
+          ],
+          "all_frames": true
         }
     ]
 }
