@@ -10,6 +10,11 @@ function removeADs() {
         for (let i = 0; i < adArray_B.length; i++) {
                 adArray_B[i].parentElement.parentElement.remove();
         };
+        let adlist_C = document.getElementsByClassName('b_algoSlug');
+        let adArray_C = Array.from(adlist_C);
+        for (let i = 0; i < adArray_C.length; i++) {
+                adArray_C[i].parentElement.parentElement.remove();
+        };
 };
 function removeimageADs(){
         let ad_on_image =  document.querySelectorAll('div.ta_c');
