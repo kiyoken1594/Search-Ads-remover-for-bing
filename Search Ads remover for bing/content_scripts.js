@@ -4,9 +4,9 @@ function removeADs() {
         for (let i = 0; i < adArray_A.length; i++) {
                 adArray_A[i].remove();
         };
-        let regex = /^(?!title|subtitle)[a-z]{2,10}$/;
+        let regex_adB = /^(?!title|subtitle)[a-z]{2,10}$/;
         let adlist_B = document.querySelectorAll('p');
-        let adArray_B = Array.from(adlist_B).filter(div => regex.test(div.className));
+        let adArray_B = Array.from(adlist_B).filter(div => regex_adB.test(div.className));
         for (let i = 0; i < adArray_B.length; i++) {
                 adArray_B[i].parentElement.parentElement.remove();
         };
@@ -15,15 +15,22 @@ function removeADs() {
         for (let i = 0; i < adArray_C.length; i++) {
                 adArray_C[i].parentElement.parentElement.remove();
         };
+        let adlist_D = document.getElementsByClassName('b_ads1line');
+        let adArray_D = Array.from(adlist_D);
+        for (let i = 0; i < adArray_D.length; i++) {
+                console.log("removed")
+                adArray_D[i].parentElement.parentElement.parentElement.remove();
+        };
+
 };
-function removeimageADs(){
-        let ad_on_image =  document.querySelectorAll('div.ta_c');
+function removeimageADs() {
+        let ad_on_image = document.querySelectorAll('div.ta_c');
         let adArray_image = Array.from(ad_on_image);
         for (let i = 0; i < adArray_image.length; i++) {
                 adArray_image[i].remove();
         };
 };
-window.onload = function(){
+window.onload = function () {
         removeADs;
         setInterval(removeADs, 500);
         removeimageADs;
