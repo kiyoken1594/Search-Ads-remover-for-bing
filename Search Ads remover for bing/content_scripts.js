@@ -21,6 +21,12 @@ function removeADs() {
                 console.log("removed")
                 adArray_D[i].parentElement.parentElement.parentElement.remove();
         };
+        let adlist_E = document.getElementsByClassName('b_ad b_adcard');
+        let adArray_E = Array.from(adlist_E);
+        for (let i = 0; i < adArray_E.length; i++) {
+                console.log("removed")
+                adArray_E[i].parentElement.parentElement.remove();
+        };
 
 };
 function removeimageADs() {
@@ -32,7 +38,7 @@ function removeimageADs() {
 };
 window.onload = function () {
         removeADs;
-        setInterval(removeADs, 500);
+        setInterval(removeADs, 250);
         removeimageADs;
-        setInterval(removeimageADs, 250);
+        setInterval(removeimageADs, 100);
 };
